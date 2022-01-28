@@ -14,6 +14,12 @@ pip install ./watch-norminette
 export PATH=/home/coder/.local/bin:$PATH
 ```
 
+## Trapaça
+Esse script foi desenvolvido para rodar o [norminette](https://github.com/42School/norminette) da 42 toda vez que um arquivo for salvo e mostrar no terminal, mas pode ser considerado trapaça utilizar o watch-norminette no *basecamp* já que
+> "Durante avaliações, o camper precisa ter total conhecimento do código e das ferramentas que usa."
+
+Se você não souber como o código funciona, não utilize, caso esteja confuso em alguma parte, abra uma Issue e tire sua dúvida!
+
 ## Exemplos
 > Você pode utilizar `wn` e/ou `watch-norminette` para utilizar o script.
 
