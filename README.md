@@ -8,9 +8,10 @@ Clone o repositório com o seguinte comando:
 git clone https://github.com/NiumXp/watch-norminette.git
 ```
 
-..e instale o comando `wn` e `watch-norminette` utilizando
-```
-pip install -e ./watch-norminette
+..instale os comandos `wn` e `watch-norminette` utilizando
+```sh
+pip install ./watch-norminette
+export PATH=/home/coder/.local/bin:$PATH
 ```
 
 ## Exemplos
