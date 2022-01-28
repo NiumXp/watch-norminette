@@ -5,7 +5,7 @@ import argparse
 import subprocess
 import collections
 
-PATTERN = re.compile(r"line:\s+(\d+),\s+col:\s+(\d+)\):\s+([\w\s]+)\n")
+PATTERN = re.compile(r"(\d+),[col\s:]+(\d)\W+([\w\s]+)$", flags=re.M | re.A)
 
 _path = os.getcwd()
 _path = os.path.dirname(_path)
