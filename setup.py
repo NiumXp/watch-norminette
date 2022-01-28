@@ -21,6 +21,7 @@ setup(
     entry_points = {
         "console_scripts": [
             "wn=wn.__main__:main",
+            "watch-norminette=wn.__main__:main",
         ],
     }
 )
