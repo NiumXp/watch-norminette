@@ -7,7 +7,7 @@ import collections
 
 PATTERN = re.compile(r"line:\s+(\d+),\s+col:\s+(\d+)\):\s+([\w\s]+)\n")
 
-_path = os.path.abspath(__file__)
+_path = os.getcwd()
 _path = os.path.dirname(_path)
 
 temp = collections.defaultdict(dict)
