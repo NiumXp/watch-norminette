@@ -2,10 +2,10 @@
 Um script em Python que fica observando uma pasta e rodando o norminette nos arquivos quando forem salvos
 
 ## Instalação
-Clone o repositório com o seguinte comando (SSH):
+Clone o repositório com o seguinte comando:
 
 ```sh
-git clone git@github.com:NiumXp/watch-norminette.git
+git clone https://github.com/NiumXp/watch-norminette.git
 ```
 
 ..e instale o comando `wn` e `watch-norminette` utilizando
