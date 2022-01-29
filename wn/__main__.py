@@ -72,4 +72,7 @@ def main():
             print_repository()
             break
 
-        time.sleep(.1)
+        try:
+            time.sleep(.1)
+        except KeyboardInterrupt:
+            exit(0)
