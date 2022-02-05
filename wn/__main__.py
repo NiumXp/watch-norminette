@@ -4,7 +4,7 @@ import time
 import argparse
 import subprocess
 import collections
-from contextlib import supress
+from contextlib import suppress
 
 PATTERN = re.compile(r"(\d+)\D+(\d+)\W+([\w ]+)", flags=re.A)
 
@@ -33,7 +33,7 @@ def norminette(file):
 
 
 def main():
-    with supress(KeyboardInterrupt):
+    with suppress(KeyboardInterrupt):
         while True:
             for folder, _, files in os.walk(_path):
                 for file in files:
