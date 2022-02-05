@@ -11,7 +11,7 @@ git clone https://github.com/NiumXp/watch-norminette.git
 ..instale os comandos `wn` e `watch-norminette` utilizando
 ```sh
 pip install ./watch-norminette
-export PATH=/home/coder/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 ```
 
 ## Trapaça
