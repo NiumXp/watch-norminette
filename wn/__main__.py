@@ -4,6 +4,7 @@ import time
 import argparse
 import subprocess
 import collections
+from contextlib import supress
 
 PATTERN = re.compile(r"(\d+)\D+(\d+)\W+([\w ]+)", flags=re.A)
 
@@ -32,47 +33,43 @@ def norminette(file):
 
 
 def main():
-    while True:
-        for folder, _, files in os.walk(_path):
-            for file in files:
-                path = os.path.join(folder, file)
+    with supress(KeyboardInterrupt):
+        while True:
+            for folder, _, files in os.walk(_path):
+                for file in files:
+                    path = os.path.join(folder, file)
 
-                _, extension = os.path.splitext(file)
-                if extension == ".c":
-                    if ERROR:
-                        output = norminette(path)
-                        firstline, *rest = output.split('\n')
+                    _, extension = os.path.splitext(file)
+                    if extension == ".c":
+                        if ERROR:
+                            output = norminette(path)
+                            firstline, *rest = output.split('\n')
 
-                        if "r" == firstline[-2]:
-                            print(f"\033[1;31m{len(rest):>3}\033[0m {path}")
+                            if "r" == firstline[-2]:
+                                print(f"\033[1;31m{len(rest):>3}\033[0m {path}")
 
-                        continue
+                            continue
 
-                    now = os.stat(path).st_mtime
-                    old = temp[folder].setdefault(file, now)
+                        now = os.stat(path).st_mtime
+                        old = temp[folder].setdefault(file, now)
 
-                    if old < now:
-                        os.system("clear")
+                        if old < now:
+                            os.system("clear")
 
-                        temp[folder][file] = now
+                            temp[folder][file] = now
 
-                        output = norminette(path)
-                        firstline, rest = output.split('\n', 1)
+                            output = norminette(path)
+                            firstline, rest = output.split('\n', 1)
 
-                        if "OK!" in firstline:
-                            print(f"{path} \033[1;32mOK!\033[0m")
+                            if "OK!" in firstline:
+                                print(f"{path} \033[1;32mOK!\033[0m")
 
-                        for match in PATTERN.finditer(rest):
-                            l, c, t = match.groups()
-                            print(f"{path}:{l}:{c}\t\033[1;31m{t}\033[0m")
+                            for match in PATTERN.finditer(rest):
+                                l, c, t = match.groups()
+                                print(f"{path}:{l}:{c}\t\033[1;31m{t}\033[0m")
 
-                        print_repository()
+                            print_repository()
 
-        if ERROR:
-            print_repository()
-            break
-
-        try:
-            time.sleep(.1)
-        except KeyboardInterrupt:
-            exit(0)
+            if ERROR:
+                print_repository()
+                break
