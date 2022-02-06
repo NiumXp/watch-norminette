@@ -73,3 +73,5 @@ def main():
             if ERROR:
                 print_repository()
                 break
+
+            time.sleep(.1)
