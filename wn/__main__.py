@@ -38,6 +38,7 @@ def main():
             for folder, _, files in os.walk(_path):
                 for file in files:
                     path = os.path.join(folder, file)
+                    path = os.path.relpath(path)
 
                     _, extension = os.path.splitext(file)
                     if extension == ".c":
