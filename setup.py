@@ -21,9 +21,10 @@ setup(
     include_package_data=True,
     python_requires=">=3.7.0",
     classifiers=[
-        "Natural Language :: Brazilian Portuguese",
+        "Development Status :: 5 - Production/Stable",
+        "Natural Language :: Portuguese (Brazilian)",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3.7"
+        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
