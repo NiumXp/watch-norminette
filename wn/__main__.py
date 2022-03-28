@@ -55,7 +55,10 @@ def main():
                         old = temp[folder].setdefault(file, now)
 
                         if old < now:
-                            os.system("clear")
+                            if os.name == "nt":
+                                os.system("cls")
+                            else:
+                                print(end="\033[H\033[J")
 
                             temp[folder][file] = now
 
