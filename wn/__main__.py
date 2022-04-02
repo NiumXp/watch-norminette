@@ -41,7 +41,7 @@ def main():
                     path = os.path.relpath(path)
 
                     _, extension = os.path.splitext(file)
-                    if extension == ".c":
+                    if extension == ".c" or extension == ".h":
                         if ERROR:
                             output = norminette(path)
                             firstline, *rest = output.split('\n')
